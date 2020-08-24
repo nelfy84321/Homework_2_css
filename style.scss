@@ -1,0 +1,16 @@
+@import "./scss/_variables.scss";
+@import "./scss/_animation.scss";
+@import "./scss/_fonts.scss";
+@import "./scss/_mixin.scss";
+@import "./scss/_header.scss";
+@import "./scss/_firstsection.scss";
+@import "./scss/_secondsection.scss";
+@import "./scss/_thirdsection.scss";
+@import "./scss/_footer.scss";
+@import "./scss/_burgermenu.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Exo, sans-serif;
+}

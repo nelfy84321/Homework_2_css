@@ -1,0 +1,31 @@
+footer {
+    background-color: $main_color;
+    padding: 30px 10px;
+    font-weight: 200;
+
+    section {
+        @include regular-section;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        font-size: .9rem;
+
+        div {
+            width: 30%;
+            padding: 0 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+
+            &:last-child {
+                border-right: none;
+            }
+
+            p {
+                margin: 10px 0;
+
+                &:nth-child(2) {
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+}

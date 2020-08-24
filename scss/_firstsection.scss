@@ -1,0 +1,97 @@
+.first-content-box {
+    background-color: #f5f5f5;
+    padding-top: 50px;
+
+    section {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        max-width: $max-width;
+        height: auto;
+        padding: 30px;
+        margin: 0 auto;
+
+
+        #triangle-right {
+            align-self: flex-start;
+            width: 0;
+            height: 0;
+            border-top: 80px solid transparent;
+            border-left: 150px solid $orange_main_color;
+            border-bottom: 80px solid transparent;
+          }
+
+
+        #triangle-left {
+            align-self: flex-end;
+            width: 0;
+            height: 0;
+            border-top: 80px solid transparent;
+            border-right: 150px solid $orange_main_color;
+            border-bottom: 80px solid transparent;
+          }
+
+        
+          #main-text {
+            align-self: center;
+            text-align: center;
+            margin: 40px 0;
+
+            p {
+                padding: 15px;
+            }
+
+
+            #try-btn {
+                display: inline-block;
+                margin: 30px 0;
+                text-align: center;
+                padding: 15px 22px;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                color: #fff;
+                background-color: $orange_main_color;
+                transition: background-color 0.5s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(185, 67, 13);
+                    transition: background-color 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .first-content-box {
+        padding-top: 50px;
+
+        section {
+        padding: 10px 15px;
+
+            #triangle-right {
+                border-top: 40px solid transparent;
+                border-left: 65px solid rgb(201, 73, 14);
+                border-bottom: 40px solid transparent;
+            }
+
+            #triangle-left {
+                visibility: hidden;
+                border-top: 30px solid transparent;
+                border-right: 65px solid rgb(201, 73, 14);
+                border-bottom: 30px solid transparent;
+            }
+
+            #main-text {
+                margin: 20px 0 7px;
+
+                #try-btn {
+                    display: inline-block;
+                    margin: 15px 0;
+                    padding: 7px 16px;
+                }
+            }
+        }
+    }
+}

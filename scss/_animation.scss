@@ -1,0 +1,39 @@
+//Animation for header text in first section
+@media screen and (min-width: 768px) {
+
+  #main-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+  
+  h1 {
+    width: 24ch;
+    overflow: hidden;
+    font-family:  monospace;
+    font-size: 2rem;
+    white-space: nowrap;
+    border-right: 4px solid rgb(201, 73, 14);
+    animation: printed-text 4s steps(24),
+               flashin-border .75s step-start infinite;
+  }
+}
+
+  @keyframes flashin-border{
+    0%{
+      border-color: rgb(235, 90, 33);
+    }
+    50%{
+      border-color: transparent;
+    }
+    100%{
+      border-color: rgb(235, 90, 33);
+    }
+  }
+  
+  @keyframes printed-text{
+    from {
+      width: 0%;
+    }
+  }
+}

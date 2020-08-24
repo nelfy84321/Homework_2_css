@@ -1,0 +1,158 @@
+#top {
+    width: 100%;
+    background: $main_color;
+    position: fixed;
+    z-index: 10;
+
+    header {
+        display: flex;
+        max-width: $max-width;
+        min-height: 50px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 8px;
+        font-weight: bold;
+        color: white;
+    
+        #main-title {
+            margin: 0 16px;
+        }
+    
+        navbar {
+            .nav-item {
+               padding: 14px 20px; 
+               cursor: pointer;
+
+               &:hover {
+                   background-color: rgba(255, 255, 255, 0.30);
+                   transition: background-color .5s;
+               }
+           }
+        }
+        
+        .menu-btn {
+            display: none;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            cursor: pointer;
+        
+            span,
+            span::before,
+            span::after {
+                position: absolute;
+                top: 50%;
+                margin-top: -1px;
+                left: 50%;
+                margin-left: -9px;
+                width: 18px;
+                height: 2px;
+                background-color: #fff;
+            }
+        
+            span::before,
+            span::after {
+                content:'';
+                transition: 0.4s;
+            }
+        
+            span::before {
+                transform: translateY(-5px);
+            }
+        
+            span::after {
+                transform: translateY(5px);
+            }  
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #top {
+        
+        header {
+
+            .menu-btn {
+                display: block;
+                position: absolute;
+                top: 12px;
+                left: 10px;
+            }
+
+            .active-btn {
+                span {
+                    height: 0;
+                }
+
+                span::after {
+                    transform: rotate(45deg);
+                }
+
+                span::before {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            // Отображение пунктов навигации в виде линий, составляющих иконку гамбургера
+            navbar {
+
+                .nav-item {
+                    position: relative;
+                    display: block;
+                    left: 0;
+                    margin: 0;
+                    padding: 0;
+                    clear: both;
+                    color: transparent;
+                    font-size: 14px;
+                    letter-spacing: -6.2px;
+                    height: 7px;
+                    line-height: 7px;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                    cursor: default;
+                    transform: scaleY(0.2);
+                    transition: $transition-duration, opacity 1s;
+                    transition: left, 0.5s;
+              
+              // Добавление ширины для первой линии
+                    &:nth-child(1) {
+                    letter-spacing: -8px;
+                }
+            
+              // Добавление ширины для второй линии
+                    &:nth-child(2) {
+                        letter-spacing: -7px;
+                    }
+            
+              // Настройки для элементов, начиная с четвёртого
+                    &:nth-child(n + 4) {
+                        letter-spacing: -8px;
+                        margin-top: -7px;
+                        opacity: 0;
+                    }
+                }
+
+                &.active {
+                  // Восстанавливаем пункты навигации из «линий» в иконке меню
+                    .nav-item {
+                        color: #ffffff;
+                        letter-spacing: 0;
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0;
+                        margin-top: 0;
+                        opacity: 1;
+                        transform: scaleY(1);
+                        transition: $transition-duration, opacity 0.1s;
+                        transition: left, 0.5s;
+                        left: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
